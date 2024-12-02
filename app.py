@@ -21,6 +21,12 @@ model = pickle.load(open('model_prediksi_gagal_jantung.sav', 'rb'))
 # Streamlit interface
 # Membuat judul aplikasi web
 st.title("Ayo kita prediksi Penyakit Jantung!")
+st.markdown(
+    """
+    <h1 style="text-align: center; color: black;">Data Penyakit Jantung</h1>
+    """,
+    unsafe_allow_html=True
+)
 
 # Left sidebar
 # Sidebar untuk navigasi menu
