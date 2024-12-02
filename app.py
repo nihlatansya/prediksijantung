@@ -14,8 +14,13 @@ df = pd.read_csv('heart.csv')
 # Load pre-trained model
 model = pickle.load(open('model_prediksi_gagal_jantung.sav', 'rb'))
 
-# Streamlit interface
-st.title("Data Penyakit Jantung")
+st.markdown(
+    """
+    <h1 style="text-align: center; color: black;">Data Penyakit Jantung</h1>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Left sidebar
 menu = st.sidebar.selectbox("Pilih Konten", ['Beranda', 'Dataset', 'Grafik', 'Prediksi'])
