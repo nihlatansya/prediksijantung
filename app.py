@@ -15,16 +15,29 @@ df = pd.read_csv('heart.csv')
 model = pickle.load(open('model_prediksi_gagal_jantung.sav', 'rb'))
 
 # Streamlit interface
-st.title("Data Penyakit Jantung Explorer")
+st.title("Data Penyakit Jantung")
 
 # Left sidebar
 menu = st.sidebar.selectbox("Pilih Konten", ['Beranda', 'Dataset', 'Grafik', 'Prediksi'])
 
 if menu == 'Beranda':
-    st.image(img, caption='Gambar Jantung', use_container_width=True)
-    st.write("Selamat datang di Data Penyakit Jantung Explorer!")
-    st.write("Aplikasi ini memungkinkan Anda untuk menjelajahi data terkait penyakit jantung.")
-    st.write("Silakan pilih menu di sebelah kiri untuk melihat konten yang tersedia.")
+    st.image(img, caption='✨ Hidup Sehat Dimulai dari Jantung yang Kuat! 🫀', use_container_width=True)
+    st.markdown("""
+    #  **Selamat Datang di Data Penyakit Jantung**!  
+    🔬 **Mari jelajahi data, temukan wawasan, dan tingkatkan kesadaran Anda tentang kesehatan jantung.**  
+    🌟 Aplikasi ini dirancang untuk memberikan Anda pengalaman eksplorasi yang informatif dan menarik.
+
+    ---
+    ## 📋 **Apa yang Bisa Anda Lakukan di Sini?**
+    - 🔍 **Data Set** data penyakit jantung dengan visual yang interaktif.
+    - 📊 **Grafik** tren kesehatan untuk wawasan yang lebih dalam.
+    - 📚 **Prediksi** penting untuk hidup lebih sehat!
+
+    ---
+    🚀 **Siap Memulai?**  
+    Pilih menu di **sebelah kiri** dan mulailah perjalanan Anda untuk memahami lebih jauh tentang kesehatan jantung!  
+    """)
+    st.success("🌟 Hidup Sehat Dimulai dari Langkah Kecil Hari Ini!")
 
 elif menu == 'Dataset':
     st.subheader("Dataset Penyakit Jantung")
@@ -112,7 +125,7 @@ elif menu == 'Prediksi':
         st.subheader(f"Hasil Prediksi: {hasil}")
 
     # Visualisasi pohon keputusan
-    st.subheader("Visualisasi Pohon Keputusan")
-    fig, ax = plt.subplots(figsize=(12, 8))
-    plot_tree(model, filled=True, feature_names=X.columns, class_names=['No Heart Disease', 'Heart Disease'], rounded=True, ax=ax)
-    st.pyplot(fig)
+    #st.subheader("Visualisasi Pohon Keputusan")
+    #g, ax = plt.subplots(figsize=(12, 8))
+    #plot_tree(model, filled=True, feature_names=X.columns, class_names=['No Heart Disease', 'Heart Disease'], rounded=True, ax=ax)
+    #st.pyplot(fig)
