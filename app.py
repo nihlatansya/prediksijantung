@@ -19,8 +19,12 @@ df = pd.read_csv('heart.csv')
 model = pickle.load(open('model_prediksi_gagal_jantung.sav', 'rb'))
 
 # Streamlit interface
+<<<<<<< HEAD
 # Membuat judul aplikasi web
 st.title("Ayo kita prediksi Penyakit Jantung!")
+=======
+st.title("Data Penyakit Jantung")
+>>>>>>> 7b60214d23f8027fe3395699921893118c79ae87
 
 # Left sidebar
 # Sidebar untuk navigasi menu
@@ -28,10 +32,30 @@ menu = st.sidebar.selectbox("Pilih Konten", ['Beranda', 'Dataset', 'Grafik', 'Pr
 
 # Menu Beranda
 if menu == 'Beranda':
+<<<<<<< HEAD
     st.image(img, caption='Gambar Jantung', use_container_width=True)
     st.write("Selamat datang di web Kami!")
     st.write("Aplikasi ini memungkinkan Anda untuk menjelajahi data terkait penyakit jantung.")
     st.write("Silakan pilih menu di sebelah kiri untuk melihat konten yang tersedia.")
+=======
+    st.image(img, caption='✨ Hidup Sehat Dimulai dari Jantung yang Kuat! 🫀', use_container_width=True)
+    st.markdown("""
+    #  **Selamat Datang di Data Penyakit Jantung**!  
+    🔬 **Mari jelajahi data, temukan wawasan, dan tingkatkan kesadaran Anda tentang kesehatan jantung.**  
+    🌟 Aplikasi ini dirancang untuk memberikan Anda pengalaman eksplorasi yang informatif dan menarik.
+
+    ---
+    ## 📋 **Apa yang Bisa Anda Lakukan di Sini?**
+    - 🔍 **Data Set** data penyakit jantung dengan visual yang interaktif.
+    - 📊 **Grafik** tren kesehatan untuk wawasan yang lebih dalam.
+    - 📚 **Prediksi** penting untuk hidup lebih sehat!
+
+    ---
+    🚀 **Siap Memulai?**  
+    Pilih menu di **sebelah kiri** dan mulailah perjalanan Anda untuk memahami lebih jauh tentang kesehatan jantung!  
+    """)
+    st.success("🌟 Hidup Sehat Dimulai dari Langkah Kecil Hari Ini!")
+>>>>>>> 7b60214d23f8027fe3395699921893118c79ae87
 
 # Menu Dataset
 elif menu == 'Dataset':
@@ -130,3 +154,12 @@ elif menu == 'Prediksi':
         prediksi = model.predict(df_baru)
         hasil = "Pasien mengalami Risiko Penyakit Jantung" if prediksi[0] == 1 else "Pasien tidak Mengalami Risiko Penyakit Jantung"
         st.subheader(f"Hasil Prediksi: {hasil}")
+<<<<<<< HEAD
+=======
+
+    # Visualisasi pohon keputusan
+    #st.subheader("Visualisasi Pohon Keputusan")
+    #g, ax = plt.subplots(figsize=(12, 8))
+    #plot_tree(model, filled=True, feature_names=X.columns, class_names=['No Heart Disease', 'Heart Disease'], rounded=True, ax=ax)
+    #st.pyplot(fig)
+>>>>>>> 7b60214d23f8027fe3395699921893118c79ae87
